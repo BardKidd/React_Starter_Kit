@@ -1,11 +1,11 @@
-import { Logo } from "@/components/HomeContainer/DecorateBox";
+import { Logo } from '@/components/HomeContainer/DecorateBox';
 
 type NavbarProps = {
   onClick?: () => void;
 };
 
 const UserAccount = ({ onClick }: NavbarProps) => {
-  const user = JSON.parse(sessionStorage.getItem("userInfo"));
+  const user = JSON.parse(sessionStorage.getItem('userInfo'));
   let nickname;
   if (user) {
     nickname = user.nickname;

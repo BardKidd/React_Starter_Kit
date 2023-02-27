@@ -1,27 +1,22 @@
-const path = require("path");
+const path = require('path');
 // 將 css 取出來加到打包完的 html 內。
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // css-loader 解析 css 檔案內的 @import 及 url()。
 // postcss-loader，透過 postcss 來處理你的 css-loader。
 const cssLoader = {
   test: /\.css$/i,
-  use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
+  use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
 };
 
 const sassLoader = {
   test: /\.s[ac]ss$/i,
-  use: [
-    MiniCssExtractPlugin.loader,
-    "css-loader",
-    "postcss-loader",
-    "sass-loader",
-  ],
+  use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
 };
 
 const imageLoader = {
   test: /\.(png|jpg|jpeg|svg|gif)$i/,
-  type: "asset",
+  type: 'asset',
   parser: {
     dataUrlCondition: {
       // 小於 10 kb 會被轉成 base64
@@ -29,7 +24,7 @@ const imageLoader = {
     },
   },
   generator: {
-    filename: "image/[hash][ext][query]",
+    filename: 'image/[hash][ext][query]',
   },
 };
 
@@ -37,9 +32,9 @@ const imageLoader = {
 const babelLoader = {
   test: /\.(js|mjs|jsx|ts|tsx)$/,
   use: {
-    loader: "babel-loader",
+    loader: 'babel-loader',
   },
-  exclude: path.resolve("node_modules"),
+  exclude: path.resolve('node_modules'),
 };
 
 module.exports = {

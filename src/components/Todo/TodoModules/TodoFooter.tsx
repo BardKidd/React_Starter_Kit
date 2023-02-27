@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from 'react';
 
 type TodoFooterType = {
   todos: TodoType[];
@@ -19,7 +18,6 @@ interface TodoType {
  * @returns
  */
 const TodoFooter = ({ todos, deleteCompleted }: TodoFooterType) => {
-  const dispatch = useDispatch();
   const [todosType, setTodosType] = useState({
     completed: [],
     unCompleted: [],
@@ -27,7 +25,8 @@ const TodoFooter = ({ todos, deleteCompleted }: TodoFooterType) => {
 
   const handleDeleteCompleted = () => {
     todosType.completed.forEach((item) => {
-      dispatch(deleteCompleted(item.id));
+      //! 代修復元件
+      // dispatch(deleteCompleted(item.id));
     });
   };
 
@@ -50,11 +49,7 @@ const TodoFooter = ({ todos, deleteCompleted }: TodoFooterType) => {
   return (
     <div className="todo-flex todo-justify-between todo-items-center todo-p-6">
       <p>{todosType.unCompleted.length} 個待完成項目</p>
-      <button
-        type="button"
-        className="todo-pr-4 todo-text-[#9F9A91]"
-        onClick={() => handleDeleteCompleted()}
-      >
+      <button type="button" className="todo-pr-4 todo-text-[#9F9A91]" onClick={() => handleDeleteCompleted()}>
         清空已完成項目
       </button>
     </div>

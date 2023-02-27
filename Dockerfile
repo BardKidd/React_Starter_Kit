@@ -9,11 +9,11 @@
 # EXPOSE 80
 # COPY --from=build /app/dist /usr/local/apache2/htdocs/
 
-FROM node:alpine
+FROM node:18.14
 WORKDIR /app
 COPY package.json /app
 RUN npm install
 COPY . /app
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD ["npm", "run","start"]
 

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 /**
  * 因為使用 `flex-direction: column;`
@@ -14,14 +14,10 @@ export const TodoBox = styled.div`
   background-color: #fff;
   width: 100%;
 `;
-TodoBox.displayName = "TodoBox";
+TodoBox.displayName = 'TodoBox';
 
 const TodoModule = ({ children }: { children: any }) => {
-  return (
-    <div className="todo-w-full sm:todo-w-2/5 sm:todo-min-w-[500px]">
-      {children}
-    </div>
-  );
+  return <div className="todo-w-full sm:todo-w-2/5 sm:todo-min-w-[500px]">{children}</div>;
 };
 
 export default TodoModule;

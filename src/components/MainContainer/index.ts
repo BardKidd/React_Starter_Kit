@@ -1,21 +1,14 @@
-import styled from "styled-components";
-import Navbar from "./Navbar";
+import styled from 'styled-components';
+import Navbar from './Navbar';
 
 export const MainStyles = styled.div`
-  background: linear-gradient(
-    172.7deg,
-    #ffd370 5.12%,
-    #ffd370 53.33%,
-    #ffd370 53.44%,
-    #ffffff 53.45%,
-    #ffffff 94.32%
-  );
+  background: linear-gradient(172.7deg, #ffd370 5.12%, #ffd370 53.33%, #ffd370 53.44%, #ffffff 53.45%, #ffffff 94.32%);
   padding: 50px;
   @media screen and (max-width: 640px) {
     padding: 18px;
   }
 `;
-MainStyles.displayName = "MainStyles";
+MainStyles.displayName = 'MainStyles';
 
 export const MainContainer = styled.div`
   min-height: 100vh;
@@ -33,6 +26,6 @@ export const MainContainer = styled.div`
     margin-top: 1rem;
   }
 `;
-MainContainer.displayName = "MainContainer";
+MainContainer.displayName = 'MainContainer';
 
 export { Navbar };

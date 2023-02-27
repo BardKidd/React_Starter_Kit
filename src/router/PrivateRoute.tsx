@@ -1,5 +1,5 @@
-import { Route, Routes, Navigate } from "react-router-dom";
-import checkAuth from "@/utils/Auth";
+import { Route, Routes, Navigate } from 'react-router-dom';
+import checkAuth from '@/utils/Auth';
 
 type PrivateRouteProps = {
   path: string;

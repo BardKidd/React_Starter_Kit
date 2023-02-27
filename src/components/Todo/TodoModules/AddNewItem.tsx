@@ -1,6 +1,5 @@
-import addBtn from "@/assets/image/add.svg";
-import { useDispatch } from "react-redux";
-import { notification } from "antd";
+import addBtn from '@/assets/image/add.svg';
+import { notification } from 'antd';
 
 interface AddNewItemProps {
   value: string;
@@ -8,28 +7,23 @@ interface AddNewItemProps {
   pushSomeThing: any;
 }
 
-const AddNewItem = ({
-  value,
-  onChange: addItem,
-  pushSomeThing,
-}: AddNewItemProps) => {
-  const dispatch = useDispatch();
-
+const AddNewItem = ({ value, onChange: addItem, pushSomeThing }: AddNewItemProps) => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       sendData();
     }
   };
 
   const sendData = () => {
-    if (value.trim() !== "") {
-      console.log("value", typeof value);
-      dispatch(pushSomeThing(value.trim()));
-      addItem("");
+    if (value.trim() !== '') {
+      console.log('value', typeof value);
+      //! 代修復元件
+      // dispatch(pushSomeThing(value.trim()));
+      addItem('');
     } else {
       notification.info({
-        message: "提示",
-        description: "請輸入些甚麼吧~",
+        message: '提示',
+        description: '請輸入些甚麼吧~',
       });
     }
   };
@@ -43,12 +37,7 @@ const AddNewItem = ({
         className="todo-rounded-l-lg todo-text-[#9F9A91] todo-w-full todo-h-full todo-py-3 todo-px-4 todo-outline-0"
         placeholder="新增代辦事項"
       />
-      <img
-        src={addBtn}
-        alt="新增按鈕"
-        className="todo-cursor-pointer todo-pr-1 todo-py-1"
-        onClick={sendData}
-      />
+      <img src={addBtn} alt="新增按鈕" className="todo-cursor-pointer todo-pr-1 todo-py-1" onClick={sendData} />
     </div>
   );
 };

@@ -1,16 +1,16 @@
-import axios from "axios";
-import { notification } from "antd";
-import handleError from "./ErrorMessage";
+import axios from 'axios';
+import { notification } from 'antd';
+import handleError from './ErrorMessage';
 
 const instance = axios.create({
-  baseURL: process.env.API_PATH,
+  // baseURL: process.env.API_PATH,
   timeout: 20000,
 });
 
 instance.interceptors.request.use(
   (config) => {
     // 篩選出 token
-    const token = sessionStorage.getItem("token");
+    const token = sessionStorage.getItem('token');
     if (token) {
       config.headers.Authorization = token;
     }
@@ -18,7 +18,7 @@ instance.interceptors.request.use(
   },
   (error) => {
     return Promise.reject(error);
-  }
+  },
 );
 
 instance.interceptors.response.use(
@@ -33,43 +33,43 @@ instance.interceptors.response.use(
           break;
         case 403:
           notification.error({
-            message: "錯誤",
-            description: "403-伺服器連線錯誤，請聯絡IT人員",
+            message: '錯誤',
+            description: '403-伺服器連線錯誤，請聯絡IT人員',
           });
           break;
         case 404:
           notification.error({
-            message: "錯誤",
-            description: "404-無法找到此網址，請聯絡IT人員",
+            message: '錯誤',
+            description: '404-無法找到此網址，請聯絡IT人員',
           });
           break;
         case 405:
           notification.error({
-            message: "錯誤",
-            description: "405 Error",
+            message: '錯誤',
+            description: '405 Error',
           });
           break;
         case 415:
           notification.error({
-            message: "錯誤",
-            description: "415 Error",
+            message: '錯誤',
+            description: '415 Error',
           });
           break;
         case 500:
           notification.error({
-            message: "錯誤",
-            description: "500-系統程式發生錯誤，請聯絡程式人員",
+            message: '錯誤',
+            description: '500-系統程式發生錯誤，請聯絡程式人員',
           });
           break;
       }
     } else {
       notification.error({
-        message: "錯誤",
-        description: "CORS-系統連不上，請確認網路狀況與環境問題",
+        message: '錯誤',
+        description: 'CORS-系統連不上，請確認網路狀況與環境問題',
       });
     }
     return Promise.reject(error);
-  }
+  },
 );
 
 const ApiService = {

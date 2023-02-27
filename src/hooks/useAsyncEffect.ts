@@ -1,9 +1,6 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
-export function useAsyncEffect(
-  effect: () => Promise<void | (() => void)>,
-  dependencies?: any[]
-) {
+export function useAsyncEffect(effect: () => Promise<void | (() => void)>, dependencies?: any[]) {
   return useEffect(() => {
     const cleanupPromise = effect();
     return () => {

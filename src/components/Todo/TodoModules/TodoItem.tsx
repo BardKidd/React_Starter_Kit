@@ -1,10 +1,8 @@
-import tick from "@/assets/Image/tick.svg";
-import checkbox from "@/assets/Image/checkbox.svg";
-import closeItem from "@/assets/Image/closeItem.svg";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { notification } from "antd";
-import { editTodos } from "@/pages/Main/MainAction";
+import tick from '@/assets/Image/tick.svg';
+import checkbox from '@/assets/Image/checkbox.svg';
+import closeItem from '@/assets/Image/closeItem.svg';
+import { useState } from 'react';
+import { notification } from 'antd';
 
 type TodoItemType = {
   itemInfo: {
@@ -26,26 +24,21 @@ type TodoItemType = {
  * @returns
  */
 
-const TodoItem = ({
-  itemInfo,
-  handleEdit,
-  handleDelete,
-  handleChangeStatus,
-}: TodoItemType) => {
+const TodoItem = ({ itemInfo, handleEdit, handleDelete, handleChangeStatus }: TodoItemType) => {
   const { content, id: itemId, completed_at } = itemInfo;
   const [isEdit, setIsEdit] = useState(false);
   const [todo, setTodo] = useState(content);
-  const dispatch = useDispatch();
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       if (todo) {
-        dispatch(handleEdit(todo, itemId));
+        //! 待修復元件
+        // dispatch(handleEdit(todo, itemId));
         setIsEdit(false);
       } else {
         notification.info({
-          message: "提示",
-          description: "請輸入些甚麼吧~",
+          message: '提示',
+          description: '請輸入些甚麼吧~',
         });
       }
     }
@@ -63,11 +56,13 @@ const TodoItem = ({
   };
 
   const deleteItem = () => {
-    dispatch(handleDelete(itemId));
+    //! 待修復元件
+    // dispatch(handleDelete(itemId));
   };
 
   const changeStatus = () => {
-    dispatch(handleChangeStatus(itemId));
+    //! 待修復元件
+    // dispatch(handleChangeStatus(itemId));
   };
 
   return (
@@ -75,16 +70,10 @@ const TodoItem = ({
       {!isEdit ? (
         <>
           <div className="todo-flex todo-flex-1 todo-border-b todo-border-[#E5E5E5] todo-pb-4">
-            <img
-              className="todo-cursor-pointer"
-              src={completed_at ? tick : checkbox}
-              onClick={() => changeStatus()}
-            />
+            <img className="todo-cursor-pointer" src={completed_at ? tick : checkbox} onClick={() => changeStatus()} />
             <p
               className={`todo-pl-4 todo-font-baseFamily todo-mb-0 ${
-                completed_at
-                  ? "todo-line-through todo-text-[#9F9A91]"
-                  : "todo-cursor-pointer hover:todo-underline"
+                completed_at ? 'todo-line-through todo-text-[#9F9A91]' : 'todo-cursor-pointer hover:todo-underline'
               }`}
               onClick={() => editTodos()}
             >
@@ -92,11 +81,7 @@ const TodoItem = ({
             </p>
           </div>
           <div className="todo-pl-4">
-            <img
-              className="todo-cursor-pointer todo-pb-4"
-              onClick={() => deleteItem()}
-              src={closeItem}
-            />
+            <img className="todo-cursor-pointer todo-pb-4" onClick={() => deleteItem()} src={closeItem} />
           </div>
         </>
       ) : (
@@ -111,11 +96,7 @@ const TodoItem = ({
             />
           </div>
           <div className="todo-pl-4">
-            <img
-              className="todo-cursor-pointer todo-pb-4"
-              onClick={() => cancelEdit()}
-              src={closeItem}
-            />
+            <img className="todo-cursor-pointer todo-pb-4" onClick={() => cancelEdit()} src={closeItem} />
           </div>
         </>
       )}

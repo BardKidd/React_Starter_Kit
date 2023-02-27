@@ -12,29 +12,25 @@
 - 使用 TypeScript 開發
 - 使用 Webpack 5 以上
 - 測試使用 jest 和 React Testing Library
-- ESLint 採用 Airbnb 格式並全部採用雙引號
+- 格式可以參照 Prettier
 - react-router-dom 採用 v6 版本
 
 ## Directory Structure
 
 ```bash
-|___  dist // 打包後的結果
 |___  node_modules
 |___  src
 |     |___  assets
 |     |     |___  css
 |     |___  components  // 共用元件
-|     |___  epics       // 共用 epic
 |     |___  features    // 共用功能
 |     |___  hooks       // 共用 hook
 |     |___  middleware  // middleware 配置
 |     |___  pages       // 路由元件
-|     |___  reducers    // reducers 統一輸出配置
 |     |___  resource    // api 統一輸出配置
 |     |___  router      // 路由配置
-|     |___  store       // redux store 配置
 |     |___  utils       // 常用方法
-|___  webpack
+|     |___  webpack
 |     |___  config webpack 共用配置
 ```
 

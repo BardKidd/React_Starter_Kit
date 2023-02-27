@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import DecorateBox from "./DecorateBox";
+import styled from 'styled-components';
+import DecorateBox from './DecorateBox';
 
 export const HomeContainer = styled.div`
   background-color: #ffd370;

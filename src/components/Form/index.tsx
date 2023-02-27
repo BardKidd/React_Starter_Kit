@@ -1,6 +1,6 @@
-import Input from "./Input";
-import Header from "./header";
-import Button from "./Button";
+import Input from './Input';
+import Header from './header';
+import Button from './Button';
 
 const Form = (props: any) => {
   return (

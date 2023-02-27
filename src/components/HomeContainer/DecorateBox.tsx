@@ -1,6 +1,6 @@
-import Person from "@/assets/Image/person.svg";
-import Online from "@/assets/Image/online.svg";
-import Checkout from "@/assets/Image/checkout.svg";
+import Person from '@/assets/Image/person.svg';
+import Online from '@/assets/Image/online.svg';
+import Checkout from '@/assets/Image/checkout.svg';
 
 export const Logo = () => {
   return (
@@ -15,11 +15,7 @@ const DecorateBox = () => {
   return (
     <div className="todo-block sm:todo-flex sm:todo-flex-col sm:todo-content-center sm:todo-justify-center">
       <Logo />
-      <img
-        src={Person}
-        alt="裝飾人物相片"
-        className="todo-hidden sm:todo-block todo-mx-auto todo-mt-4"
-      />
+      <img src={Person} alt="裝飾人物相片" className="todo-hidden sm:todo-block todo-mx-auto todo-mt-4" />
     </div>
   );
 };

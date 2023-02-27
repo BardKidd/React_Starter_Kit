@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { brands, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { brands, solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 const NotFound: React.FC = () => {
   return (
@@ -11,10 +11,7 @@ const NotFound: React.FC = () => {
         </div>
         <div className="demo-mx-auto demo-mt-5 demo-flex  demo-items-center demo-justify-center">
           <Link to="/" className="demo-mr-5 demo-text-xl">
-            <FontAwesomeIcon
-              icon={solid("angle-left")}
-              className="demo-pr-2 demo-text-2xl"
-            />
+            <FontAwesomeIcon icon={solid('angle-left')} className="demo-pr-2 demo-text-2xl" />
             Home
           </Link>
         </div>

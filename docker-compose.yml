@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  local_development:
+    image: reactapp_with_docker
+    ports:
+      - 3000:3000
+    container_name: my_new_react_starter_kit
+    volumes:
+      - /Users/rinouo/Frontend/StarterKit/react_project:/app
+    

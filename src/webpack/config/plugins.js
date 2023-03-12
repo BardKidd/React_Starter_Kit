@@ -9,7 +9,7 @@ module.exports = {
     // 建立 html5 檔案，並將打包後的 script 標籤加入。
     //! 在任何地方都不能出現第二個 new HtmlWebpackPlugin 的配置
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../../src/index.html'),
+      template: path.resolve(__dirname, '../../index.html'),
     }),
     // 將 css 取出來加到打包完的 html 內。
     new MiniCssExtractPlugin({
@@ -17,7 +17,7 @@ module.exports = {
     }),
     // Webpack5 取代 eslint-loader 用。
     new ESLintPlugin({
-      context: path.resolve('.eslintrc.js'),
+      context: path.resolve('../../.eslintrc.js'),
     }),
   ],
 };

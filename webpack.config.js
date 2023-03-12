@@ -1,4 +1,4 @@
-const webpackConfig = require('./webpack');
+const webpackConfig = require('./src/webpack');
 const defaultConfig = 'development';
 
 // 採用 dev 還是 prod 方式啟動、打包專案。
